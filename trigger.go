@@ -1,39 +1,44 @@
 package main
 
 type trigger struct {
+	Name        string             `json:"name,omitempty"`
+	Description string             `json:"description,omitempty"`
+	Frequency   int                `json:"frequency,omitempty"`
+	Query       *querySpec         `json:"query,omitempty"`
+	Threshold   *triggerThreshold  `json:"threshold,omitempty"`
+	Recipients  []triggerRecipient `json:"recipients,omitempty"`
+
 	ID string `json:"id,omitempty"`
-
-	Threshold threshold `json:"threshold"`
-
-	Description string      `json:"description,omitempty"`
-	Frequency   int64       `json:"frequency"`
-	Name        string      `json:"name"`
-	Recipients  []recipient `json:"recipients"`
-	Query       query       `json:"query"`
 }
 
-type recipient struct {
+type triggerRecipient struct {
 	Type   string `json:"type"`
-	Target string `json:"target"`
+	Target string `json:"target,omitempty"`
 }
 
-type threshold struct {
-	Value int    `json:"value"`
-	Op    string `json:"op"`
+type triggerThreshold struct {
+	Op    string   `json:"op"`
+	Value *float64 `json:"value"`
 }
 
-type query struct {
-	Calculations []calculation `json:"calculations"`
-	Filters      []filter      `json:"filters"`
-	Breakdowns   []string      `json:"breakdowns"`
+type querySpec struct {
+	Breakdowns        []string        `json:"breakdowns,omitempty"`
+	Calculations      []calculateSpec `json:"calculations,omitempty"`
+	Filters           []filterSpec    `json:"filters,omitempty"`
+	FilterCombination *string         `json:"filter_combination,omitempty"`
 }
 
-type calculation struct {
-	Op string `json:"op"`
+type calculateSpec struct {
+	Column *string `json:"column,omitempty"`
+	Op     string  `json:"op"`
 }
 
-type filter struct {
-	Value  string `json:"value"`
-	Op     string `json:"op"`
-	Column string `json:"column"`
+type filterSpec struct {
+	Column string      `json:"column"`
+	Op     string      `json:"op"`
+	Value  interface{} `json:"value,omitempty"`
+}
+
+type configFile struct {
+	Triggers []trigger `json:"triggers"`
 }

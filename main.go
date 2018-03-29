@@ -58,10 +58,13 @@ func main() {
 		&ApplyCommand{})
 
 	parser.AddCommand("list", "List all triggers",
-		`List all triggers for the specified dataset. 
-		
-  Trigger definitions will be returned in JSON format.`,
+		`List all triggers for the specified dataset.`,
 		&ListCommand{})
+
+	parser.AddCommand("export", "Export current trigger config",
+		`Exports trigger config for the given dataset to a JSON format usable
+	by the 'apply' command. Prints to stdout.`,
+		&ExportCommand{})
 
 	// run whichever command is chosen
 	parser.Usage = usage

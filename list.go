@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 )
 
@@ -14,12 +13,9 @@ func (l *ListCommand) Execute(args []string) error {
 		return err
 	}
 
-	data, err := json.Marshal(triggers)
-	if err != nil {
-		fmt.Println("Failed to list triggers: ", err)
-		return err
+	for _, trigger := range triggers {
+		fmt.Println(trigger.Name)
 	}
-	fmt.Println(string(data))
 
 	return nil
 }

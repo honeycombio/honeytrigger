@@ -6,10 +6,6 @@ import (
 	"io/ioutil"
 )
 
-type configFile struct {
-	Triggers []trigger `json:"triggers"`
-}
-
 type ApplyCommand struct {
 	File string `short:"f" long:"config_file" description:"Path to config file for the given dataset" required:"true"`
 }
