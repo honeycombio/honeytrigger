@@ -22,12 +22,13 @@ $ honeytrigger    # (if $GOPATH/bin is in your path.)
 | Command  | Description |
 | -------- | ----------- |
 | `apply`  | create/update triggers from a config file |
-| `list`   | list all triggers |
+| `list`   | print a list of all trigger names |
+| `export` | dump the existing trigger config in JSON format |
 
 
 ## Adding and updating triggers (`apply`)
 
-First, create a config file defining your triggers (you may want to generate your triggers by exporting them with `list` first):
+First, create a config file defining your triggers. If this seems daunting, try creating a trigger you want in the UI and then using the `export` command to generate the config:
 
 ```json
 {
@@ -114,9 +115,25 @@ $
 
 ## Listing triggers (`list`)
 
+Just print a list of triggers by name.
+
 Example:
 ```
 $ ./honeytrigger list -k ${WRITE_KEY} -d mydataset
+Trigger 1
+Trigger 2
+...
+
+$
+```
+
+## Exporting triggers (`export`)
+
+You can use this to generate a JSON config suitable for use by `apply`.
+
+Example:
+```
+$ ./honeytrigger export -k ${WRITE_KEY} -d mydataset
 [{"id":"Euex2tHuEuy","threshold":{"value":0,"op":"\u003e"},"description":"something something something","frequency":300,"name":"Trigger 1","recipients":[{"type":"email","target":"me@example.com"}],"query":{"calculations":[{"op":"COUNT"}],"filters":[{"value":"root","op":"=","column":"user"}],"breakdowns":["user"]}},{"id":"BtFqDeE7SjU","threshold":{"value":0,"op":"\u003e"},"description":"something else","frequency":300,"name":"Trigger 2","recipients":[{"type":"email","target":"me@example.com"}],"query":{"calculations":[{"op":"COUNT"}],"filters":[{"value":"root","op":"!=","column":"user"}],"breakdowns":["user"]}}]
 
 $
