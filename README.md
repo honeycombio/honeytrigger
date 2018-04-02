@@ -1,6 +1,8 @@
 # honeytrigger
 
-`honeytrigger` provides a simple interface for managing triggers
+`honeytrigger` provides a simple interface for managing Honeycomb triggers
+
+__Warning__: This tool is based upon the experimental Triggers API. It has not been released and is subject to change at any time. Use at your own risk.
 
 ## Installation
 
