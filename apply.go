@@ -43,7 +43,7 @@ func (a *ApplyCommand) Execute(args []string) error {
 		fmt.Printf("Updating trigger '%s' with id %s\n", currentTriggers[i].Name, currentTriggers[i].ID)
 		err = updateTrigger(options.APIHost, options.Dataset, options.WriteKey, &currentTriggers[i])
 		if err != nil {
-			fmt.Printf("Failed to update trigger '%s': %s", newTriggers[i].Name, err)
+			fmt.Printf("Failed to update trigger '%s': %s", currentTriggers[i].Name, err)
 			return err
 		}
 	}
