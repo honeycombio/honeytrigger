@@ -1,6 +1,6 @@
 # honeytrigger
 
-[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/honeytrigger)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
+[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/honeytrigger?color=success)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
 
 `honeytrigger` provides a simple interface for managing Honeycomb triggers
 
