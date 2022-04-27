@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  go: circleci/go@1.7.0
+  go: circleci/go@1.7.1
 
 commands:
   go-build:
@@ -32,7 +32,7 @@ jobs:
   test:
     executor:
       name: go/default
-      tag: "1.17"
+      tag: "1.18"
     steps:
       - checkout
       - go/load-cache
@@ -45,7 +45,7 @@ jobs:
   build:
     executor:
       name: go/default
-      tag: "1.17"
+      tag: "1.18"
     steps:
       - checkout
       - go/load-cache
