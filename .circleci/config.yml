@@ -30,9 +30,8 @@ commands:
 
 jobs:
   test:
-    executor:
-      name: go/default
-      tag: "1.17"
+    docker:
+      - image: cimg/go:1.18
     steps:
       - checkout
       - go/load-cache
@@ -43,9 +42,8 @@ jobs:
       - go/save-cache
 
   build:
-    executor:
-      name: go/default
-      tag: "1.17"
+    docker:
+      - image: cimg/go:1.18
     steps:
       - checkout
       - go/load-cache
