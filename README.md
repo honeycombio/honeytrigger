@@ -1,5 +1,8 @@
 # honeytrigger
 
+[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/honeytrigger)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
+
+
 **STATUS: this project is [archived](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md).**
 
 [Triggers are supported](https://registry.terraform.io/providers/honeycombio/honeycombio/latest/docs/resources/trigger) by the Honeycomb Terraform provider, which we recommend.
