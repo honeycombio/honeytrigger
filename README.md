@@ -1,8 +1,14 @@
 # honeytrigger
 
-[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/honeytrigger?color=pink)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
+[![OSS Lifecycle](https://img.shields.io/osslifecycle/honeycombio/honeytrigger)](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md)
 
-**STATUS: this project is being sunset.** [See https://github.com/honeycombio/honeytrigger/issues/19](https://github.com/honeycombio/honeytrigger/issues/19)
+
+**STATUS: this project is [archived](https://github.com/honeycombio/home/blob/main/honeycomb-oss-lifecycle-and-practices.md).**
+
+[Triggers are supported](https://registry.terraform.io/providers/honeycombio/honeycombio/latest/docs/resources/trigger) by the Honeycomb Terraform provider, which we recommend.
+
+Questions? You can chat with us in the Honeycomb Pollinators Slack. You can find a direct link to request an invite in [Spread the Love: Appreciating Our Pollinators Community](https://www.honeycomb.io/blog/spread-the-love-appreciating-our-pollinators-community/).
+
 
 `honeytrigger` provides a simple interface for managing Honeycomb triggers
 
